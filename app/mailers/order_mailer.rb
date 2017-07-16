@@ -7,4 +7,12 @@ class OrderMailer < ApplicationMailer
     mail(to: @user.email, subject: "[Pharmabook] 感谢您完成本次的下单，以下为您本次购物明细 #{order.token}")
   end
 
+  def apply_cancel(order)
+    @order = order
+    @user = order.user
+    @product_lists = @order.product_lists
+
+    mail(to: "admin@chinapharmabook.com", subject: "[Pharmabook] 用户#{order.user.email}申请取消订单 #{order.token}")
+  end
+
 end
