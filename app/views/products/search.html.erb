@@ -1,0 +1,10 @@
+<div id="main_content">
+    <div id="pins" class="transitions-enabled">
+      <% @products.each do |product| %>
+        <div class="col-sm-4 col-xs-6 box">
+          <%= product.title %>  | ￥ <%= product.price %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
