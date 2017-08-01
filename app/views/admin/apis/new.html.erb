@@ -1,0 +1,10 @@
+<h1> Add a api </h1>
+
+<%= simple_form_for [:admin,@api] do |f| %>
+
+<%= f.input :name %>
+<%= f.input :number %>
+<%= f.input :manufacturer %>
+
+  <%= f.submit "Submit" %>
+<% end %>
