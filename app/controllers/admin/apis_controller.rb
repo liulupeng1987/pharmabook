@@ -8,7 +8,7 @@ class Admin::ApisController < ApplicationController
   end
 
   def index
-    @apis = Api.all
+    @apis = Api.all.paginate(:page => params[:page], :per_page => 20)
   end
 
   def new

@@ -1,12 +1,12 @@
 class ApisController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
-  
+
   def show
     @api = Api.find(params[:id])
   end
 
   def index
-    @apis = Api.all
+    @apis = Api.all.paginate(:page => params[:page], :per_page => 20)
   end
 
   def new
