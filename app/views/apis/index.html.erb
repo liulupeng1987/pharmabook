@@ -1,24 +1,32 @@
-<%= form_tag search_apis_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
-  <p> <%= text_field_tag :search, params[:search], class: "form-control”, placeholder: “search title" %>
-    <%= submit_tag "Search", name:nil, class: "btn btn-default" %>
-  </p>
-<% end %>
+<div class="container top-margin">
+  <div class="row">
 
+    <table class="table table-boldered">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>License number</td>
+          <td>Manufacturer name</td>
+        </tr>
+      </thead>
 
-<table class="table table-boldered">
-  <% @apis.each do |api| %>
-  <tr>
-    <td>
-      <%= link_to(api.name, api_path(api)) %>
-    </td>
-    <td>
-      <%= api.number %>
-    </td>
-    <td>
-      <%= api.manufacturer %>
-    </td>
-  </tr>
+      <tbody>
+        <% @apis.each do |api| %>
+        <tr>
+          <td>
+            <%= api.name %>
+          </td>
+          <td>
+            <%= api.number %>
+          </td>
+          <td>
+            <%= api.manufacturer %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= will_paginate @apis %>
 
-  <% end %>
-</table>
-  <%= will_paginate @apis %>
+  </div>
+</div>
