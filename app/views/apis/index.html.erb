@@ -1,0 +1,23 @@
+<div class="pull-right">
+  <%= link_to("Add a api", new_api_path, :class => "btn btn-default" ) %>
+</div>
+
+<table class="table table-boldered">
+  <% @apis.each do |api| %>
+  <tr>
+    <td>
+      <%= link_to(api.name, api_path(api)) %>
+    </td>
+    <td>
+      <%= api.number %>
+    </td>
+    <td>
+      <%= api.manufacturer %>
+    </td>
+    <td>
+      <%= link_to("Edit", edit_api_path(api)) %> |
+      <%= link_to("Destroy", api_path(api), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+    </td>
+  </tr>
+  <% end %>
+</table>
