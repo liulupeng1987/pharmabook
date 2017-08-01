@@ -1,0 +1,10 @@
+<table class="table table-boldered">
+  <% @apis.each do |api| %>
+  <tr>
+    <td><%= api.name %></td>
+    <td><%= api.number %></td>
+    <td><%= api.manufacturer %></td>
+  </tr>
+  <% end %>
+</table>
+<%= will_paginate @products %>

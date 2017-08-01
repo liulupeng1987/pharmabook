@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801083852) do
+ActiveRecord::Schema.define(version: 20170801113547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20170801083852) do
     t.string   "manufacturer"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["manufacturer"], name: "index_apis_on_manufacturer", using: :btree
+    t.index ["name"], name: "index_apis_on_name", using: :btree
   end
 
   create_table "cart_items", force: :cascade do |t|

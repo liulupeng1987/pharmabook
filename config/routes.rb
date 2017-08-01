@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root 'apis#index'
 
-  resources :apis
+  resources :apis do
+    collection do
+      get :search
+    end
+  end
+
 
 
   namespace :admin do
