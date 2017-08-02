@@ -5,13 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# u = User.new
-# u.email = "liulupeng3385@163.com"
-# u.password = "123456"
-# u.password_confirmation = "123456"
-#
-# u.is_admin = true
-# u.save
+u = User.new
+u.email = "liulupeng3385@163.com"
+u.password = "123456"
+u.password_confirmation = "123456"
+
+u.is_admin = true
+u.save
 
 Api.create!(name:"Mifepristone", number:"H20084624", manufacturer:"Beijing keyifeng Biotech Development CO.,LTD.")
 Api.create!(name:"α-ketoleucine calcium", number:"H20113354", manufacturer:"Evonik Rexim(Nanning) PharmaceuticalCo., Ltd")
