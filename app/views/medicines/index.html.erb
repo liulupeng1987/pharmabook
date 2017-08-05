@@ -1,5 +1,4 @@
 <%= render "searchbox" %>
-
 <div class="container top-margin">
 
   <div class="row">
@@ -10,27 +9,31 @@
         <tr>
           <td>Name</td>
           <td>License number</td>
+          <td>Strength</td>
           <td>Manufacturer name</td>
         </tr>
       </thead>
 
       <tbody>
-        <% @apis.each do |api| %>
+        <% @medicines.each do |medicine| %>
         <tr>
           <td>
-            <%= api.name %>
+            <%= medicine.name %>
           </td>
           <td>
-            <%= api.number %>
+            <%= medicine.number %>
           </td>
           <td>
-            <%= api.manufacturer %>
+            <%= medicine.strength %>
+          </td>
+          <td>
+            <%= medicine.manufacturer_name %>
           </td>
         </tr>
         <% end %>
       </tbody>
     </table>
-    <%= will_paginate @apis %>
+    <%= will_paginate @medicines %>
 
   </div>
 </div>

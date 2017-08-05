@@ -8,14 +8,24 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :medicine_manufacturers
+  resources :medicine_manufacturers do
+    collection do
+      get :search
+    end
+    resources :medicines
+  end
 
-
+  resources :medicines do
+    collection do
+      get :search
+    end
+  end
 
   namespace :admin do
     resources :products
     resources :apis
     resources :medicine_manufacturers
+    resources :medicines
     resources :orders do
       member do
         post :cancel

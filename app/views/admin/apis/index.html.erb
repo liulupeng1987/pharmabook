@@ -2,6 +2,8 @@
   <%= link_to("Add a api", new_admin_api_path, :class => "btn btn-default" ) %>
 </div>
 
+<%= render "searchbox" %>
+
 <table class="table table-boldered">
   <% @apis.each do |api| %>
   <tr>

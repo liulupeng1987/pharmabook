@@ -1,3 +1,5 @@
+<%= render "searchbox" %>
+
 <div class="container top-margin">
   <div class="row">
 
@@ -16,11 +18,18 @@
           <td><%= api.name %></td>
           <td><%= api.number %></td>
           <td><%= api.manufacturer %></td>
+          <% if current_user.admin? %>
+            <td>
+              <%= link_to("Edit", edit_admin_api_path(api)) %> |
+              <%= link_to("Destroy", admin_api_path(api), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+            </td>
+          <% end %>
+
         </tr>
         <% end %>
       </tbody>
     </table>
-    <%= will_paginate @products %>
+    <%= will_paginate @apis %>
 
   </div>
 </div>

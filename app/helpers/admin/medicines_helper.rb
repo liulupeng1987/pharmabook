@@ -1,0 +1,2 @@
+module Admin::MedicinesHelper
+end

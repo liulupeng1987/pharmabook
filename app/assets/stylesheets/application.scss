@@ -19,5 +19,22 @@
 @import "font-awesome";
 
   .top-margin {
-    margin-top: 80px;
+    margin-top: 20px;
+  }
+  .adminlayout {
+    margin-top: 60px;
+  }
+  .searchboxcenter{
+    margin:auto;
+  }
+
+  .bs-docs-header {
+    margin-bottom: 40px;
+    font-size: 20px;
+    position: relative;
+    padding: 30px 0;
+    color: #cdbfe3;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0,0,0,.1);
+    background-color: #6f5499;
   }

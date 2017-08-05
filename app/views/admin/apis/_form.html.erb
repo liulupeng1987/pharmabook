@@ -1,6 +1,5 @@
-<h1> Edit a api </h1>
 
-<%= simple_form_for @api do |f| %>
+<%= simple_form_for [:admin,@api] do |f| %>
 
 <%= f.input :name %>
 <%= f.input :number %>

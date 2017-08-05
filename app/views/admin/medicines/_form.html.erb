@@ -1,0 +1,11 @@
+<%= simple_form_for [:admin,@medicine] do |f| %>
+
+<%= f.input :name %>
+<%= f.input :number %>
+<%= f.input :strength %>
+<%= f.input :manufacturer_name %>
+<%= f.input :manufacturer_id %>
+
+  <%= f.submit "Submit" %>
+
+<% end %>

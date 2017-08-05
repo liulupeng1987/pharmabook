@@ -1,5 +1,6 @@
-<div class="container top-margin">
-  <div class="row">
+<%= render "searchbox" %>
+<div class="top-margin">
+
     <div class="pull-right" style="padding-bottom: 20px;">
       <%= link_to("新增厂家", new_admin_medicine_manufacturer_path, class: "btn btn-primary btn-sm") %>
     </div>
@@ -14,22 +15,26 @@
       </thead>
 
       <tbody>
-        <% @medicine_manufactuers.each do |medicine_manufactuer| %>
+        <% @medicine_manufacturers.each do |medicine_manufacturer| %>
         <tr>
           <td>
-            <%= medicine_manufactuers.name %>
+            <%= medicine_manufacturer.name %>
           </td>
           <td>
-            <%= medicine_manufactuers.website %>
+            <%= medicine_manufacturer.website %>
           </td>
           <td>
-            <%= medicine_manufactuers.contact_info %>
+            <%= medicine_manufacturer.contact_info %>
+          </td>
+          <td>
+            <%= link_to("Edit", edit_admin_medicine_manufacturer_path(medicine_manufacturer)) %> |
+            <%= link_to("Destroy", admin_medicine_manufacturer_path(medicine_manufacturer), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
           </td>
         </tr>
         <% end %>
       </tbody>
     </table>
-    <%= will_paginate @medicine_manufactuers %>
+    <%= will_paginate @medicine_manufacturers %>
 
-  </div>
+
 </div>

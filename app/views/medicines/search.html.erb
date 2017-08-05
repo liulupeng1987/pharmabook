@@ -1,0 +1,36 @@
+<%= render "searchbox" %>
+
+<div class="container top-margin">
+  <div class="row">
+
+    <table class="table table-boldered">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>License number</td>
+          <td>strength</td>
+          <td>Manufacturer name</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @medicines.each do |medicine| %>
+        <tr>
+          <td><%= medicine.name %></td>
+          <td><%= medicine.number %></td>
+          <td><%= medicine.strength %></td>
+          <td><%= medicine.manufacturer_name %></td>
+          <% if current_user.admin? %>
+            <td>
+              <%= link_to("Edit", edit_admin_medicine_path(medicine)) %> |
+              <%= link_to("Destroy", admin_medicine_path(medicine), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+            </td>
+          <% end %>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= will_paginate @medicines %>
+
+  </div>
+</div>

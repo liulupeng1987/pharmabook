@@ -1,0 +1,33 @@
+<div class="pull-right">
+  <%= link_to("Add a Medicine", new_admin_medicine_path, :class => "btn btn-default" ) %>
+</div>
+
+<%= render "searchbox" %>
+
+<table class="table table-boldered">
+  <% @medicines.each do |medicine| %>
+  <tr>
+    <td>
+      <%= link_to(medicine.name, admin_medicine_path(medicine)) %>
+    </td>
+    <td>
+      <%= medicine.number %>
+    </td>
+    <td>
+      <%= medicine.strength %>
+    </td>
+    <td>
+      <%= medicine.manufacturer_name %>
+    </td>
+    <td>
+      <%= medicine.manufacturer_id %>
+    </td>
+    <td>
+      <%= link_to("Edit", edit_admin_medicine_path(medicine)) %> |
+      <%= link_to("Destroy", admin_medicine_path(medicine), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+  <%= will_paginate @medicines %>

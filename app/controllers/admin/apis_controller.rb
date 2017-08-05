@@ -46,6 +46,15 @@ class Admin::ApisController < ApplicationController
     redirect_to admin_apis_path
   end
 
+
+    def search
+      if params[:search].present?
+        @apis = Api.search(params[:search], fields:["name", "number", "manufacturer"], page: params[:page], per_page: 20)
+      else
+        @apis = Api.all.paginate(:page => params[:page], :per_page => 20)
+      end
+    end
+
   private
 
   def api_params
