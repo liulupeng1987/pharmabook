@@ -1,0 +1,35 @@
+<div class="container top-margin">
+  <div class="row">
+    <div class="pull-right" style="padding-bottom: 20px;">
+      <%= link_to("新增厂家", new_admin_medicine_manufacturer_path, class: "btn btn-primary btn-sm") %>
+    </div>
+
+    <table class="table table-boldered">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Website</td>
+          <td>Contact information</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @medicine_manufactuers.each do |medicine_manufactuer| %>
+        <tr>
+          <td>
+            <%= medicine_manufactuers.name %>
+          </td>
+          <td>
+            <%= medicine_manufactuers.website %>
+          </td>
+          <td>
+            <%= medicine_manufactuers.contact_info %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= will_paginate @medicine_manufactuers %>
+
+  </div>
+</div>

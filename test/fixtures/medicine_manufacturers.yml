@@ -3,11 +3,9 @@
 one:
   name: MyString
   website: MyString
-  contact_info: MyString
-  text: MyString
+  contact_info: MyText
 
 two:
   name: MyString
   website: MyString
-  contact_info: MyString
-  text: MyString
+  contact_info: MyText

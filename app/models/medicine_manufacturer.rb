@@ -1,0 +1,2 @@
+class MedicineManufacturer < ApplicationRecord
+end

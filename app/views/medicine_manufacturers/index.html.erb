@@ -11,22 +11,22 @@
       </thead>
 
       <tbody>
-        <% @medicine_manufactuers.each do |medicine_manufactuer| %>
+        <% @medicine_manufacturers.each do |medicine_manufacturer| %>
         <tr>
           <td>
-            <%= medicine_manufactuers.name %>
+            <%= medicine_manufacturers.name %>
           </td>
           <td>
-            <%= medicine_manufactuers.website %>
+            <%= medicine_manufacturers.website %>
           </td>
           <td>
-            <%= medicine_manufactuers.contact_info %>
+            <%= medicine_manufacturers.contact_info %>
           </td>
         </tr>
         <% end %>
       </tbody>
     </table>
-    <%= will_paginate @medicine_manufactuers %>
+    <%= will_paginate @medicine_manufacturers %>
 
   </div>
 </div>
