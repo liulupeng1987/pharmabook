@@ -1,0 +1,32 @@
+<div class="container top-margin">
+  <div class="row">
+
+    <table class="table table-boldered">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Website</td>
+          <td>Contact information</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @medicine_manufactuers.each do |medicine_manufactuer| %>
+        <tr>
+          <td>
+            <%= medicine_manufactuers.name %>
+          </td>
+          <td>
+            <%= medicine_manufactuers.website %>
+          </td>
+          <td>
+            <%= medicine_manufactuers.contact_info %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= will_paginate @medicine_manufactuers %>
+
+  </div>
+</div>

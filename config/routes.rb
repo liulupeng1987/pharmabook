@@ -8,11 +8,14 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :medicine_manufactuers
+
 
 
   namespace :admin do
     resources :products
     resources :apis
+    resources :medicine_manufactuers
     resources :orders do
       member do
         post :cancel
