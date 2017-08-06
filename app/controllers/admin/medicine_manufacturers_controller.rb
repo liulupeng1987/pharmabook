@@ -7,6 +7,11 @@ class Admin::MedicineManufacturersController < ApplicationController
     @medicine_manufacturers = MedicineManufacturer.all.paginate(:page => params[:page], :per_page => 20)
   end
 
+  def show
+    @medicine_manufacturer = MedicineManufacturer.find(params[:id])
+    @medicines = @medicine_manufacturer.medicines.paginate(:page => params[:page], :per_page => 20)
+  end
+
   def new
     @medicine_manufacturer = MedicineManufacturer.new
   end

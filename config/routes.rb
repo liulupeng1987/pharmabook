@@ -24,7 +24,9 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :products
     resources :apis
-    resources :medicine_manufacturers
+    resources :medicine_manufacturers do
+      resources :medicines
+    end
     resources :medicines
     resources :orders do
       member do

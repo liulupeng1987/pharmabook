@@ -58,6 +58,6 @@ class Admin::MedicinesController < ApplicationController
   private
 
   def medicine_params
-    params.require(:medicine).permit(:name, :number, :strength, :manufacturer_name, :manufacturer_id)
+    params.require(:medicine).permit(:name, :number, :strength, :manufacturer_name, :medicine_manufacturer_id)
   end
 end

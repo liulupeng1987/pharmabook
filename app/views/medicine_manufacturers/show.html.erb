@@ -1,3 +1,8 @@
+<div class="container top-margin">
+
+  <div class="row">
+    <h3>Manufacturer Basic Information</h3>
+
 <table class="table table-boldered">
   <thead>
     <tr>
@@ -10,16 +15,52 @@
   <tbody>
     <tr>
       <td>
-        <%= medicine_manufacturer.name %>
+        <%= @medicine_manufacturer.name %>
       </td>
       <td>
-        <%= medicine_manufacturer.website %>
+        <%= @medicine_manufacturer.website %>
       </td>
       <td>
-        <%= medicine_manufacturer.contact_info %>
+        <%= @medicine_manufacturer.contact_info %>
       </td>
     </tr>
   </tbody>
 </table>
+</div>
+</div>
 
-<h2> Medicine list </h2>
+
+<div class="container top-margin">
+
+  <div class="row">
+  <h3> Product list (Finished Medicines) </h3>
+
+    <table class="table table-boldered">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>License number</td>
+          <td>Strength</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @medicines.each do |medicine| %>
+        <tr>
+          <td>
+            <%= medicine.name %>
+          </td>
+          <td>
+            <%= medicine.number %>
+          </td>
+          <td>
+            <%= medicine.strength %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= will_paginate @medicines %>
+
+  </div>
+</div>

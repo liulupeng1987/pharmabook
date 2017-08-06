@@ -1,6 +1,7 @@
 class MedicineManufacturersController < ApplicationController
   def show
     @medicine_manufacturer = MedicineManufacturer.find(params[:id])
+    @medicines = @medicine_manufacturer.medicines.paginate(:page => params[:page], :per_page => 20)
   end
 
   def index

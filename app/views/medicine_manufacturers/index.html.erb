@@ -15,7 +15,7 @@
         <% @medicine_manufacturers.each do |medicine_manufacturer| %>
         <tr>
           <td>
-            <%= medicine_manufacturer.name %>
+            <%= link_to(medicine_manufacturer.name, medicine_manufacturer_path(medicine_manufacturer)) %>
           </td>
           <td>
             <%= medicine_manufacturer.website %>
