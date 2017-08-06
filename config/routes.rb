@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  match '/admin/users',   to: 'admin/users#index',   via: 'get'
   root 'apis#index'
 
   resources :apis do

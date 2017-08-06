@@ -1,0 +1,23 @@
+
+<table class="table table-boldered">
+  <thead>
+    <tr>
+      <th> User ID</th>
+      <th> User email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= user.id %>
+      </td>
+      <td>
+        <%= user.email %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+  <%= will_paginate @users %>
