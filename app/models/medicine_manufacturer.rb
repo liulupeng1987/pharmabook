@@ -1,7 +1,7 @@
 class MedicineManufacturer < ApplicationRecord
   has_many :medicines
   searchkick word_start: [:name, :number, :manufacturer_name]
-  validates :name, :website, :contact_info, presence: true
+  validates :name, :website, presence: true
 
     def search_data
       {

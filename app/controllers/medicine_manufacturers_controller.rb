@@ -5,7 +5,7 @@ class MedicineManufacturersController < ApplicationController
   end
 
   def index
-    @medicine_manufacturers = MedicineManufacturer.all.paginate(:page => params[:page], :per_page => 20)
+    @medicine_manufacturers = MedicineManufacturer.all.order('id ASC').paginate(:page => params[:page], :per_page => 20)
   end
 
 

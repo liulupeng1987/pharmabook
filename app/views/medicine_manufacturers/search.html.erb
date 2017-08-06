@@ -6,6 +6,7 @@
     <table class="table table-boldered">
       <thead>
         <tr>
+          <td>ID</td>
           <td>Name</td>
           <td>Website</td>
           <td>contact_info</td>
@@ -15,6 +16,7 @@
       <tbody>
         <% @medicine_manufacturers.each do |medicine_manufacturer| %>
         <tr>
+          <td><%= medicine_manufacturer.id %></td>
           <td><%= medicine_manufacturer.name %></td>
           <td><%= medicine_manufacturer.website %></td>
           <td><%= simple_format(medicine_manufacturer.contact_info) %></td>

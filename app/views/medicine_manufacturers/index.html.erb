@@ -5,6 +5,7 @@
     <table class="table table-boldered">
       <thead>
         <tr>
+          <td>ID</td>
           <td>Name</td>
           <td>Website</td>
           <td>Contact information</td>
@@ -14,6 +15,9 @@
       <tbody>
         <% @medicine_manufacturers.each do |medicine_manufacturer| %>
         <tr>
+          <td>
+            <%= medicine_manufacturer.id %>
+          </td>
           <td>
             <%= link_to(medicine_manufacturer.name, medicine_manufacturer_path(medicine_manufacturer)) %>
           </td>
