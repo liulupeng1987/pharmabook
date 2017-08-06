@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170806011154) do
+ActiveRecord::Schema.define(version: 20170806025736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20170806011154) do
     t.datetime "updated_at",   null: false
     t.index ["manufacturer"], name: "index_apis_on_manufacturer", using: :btree
     t.index ["name"], name: "index_apis_on_name", using: :btree
+  end
+
+  create_table "apisearches", force: :cascade do |t|
+    t.string   "query"
+    t.string   "user_email"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "cart_items", force: :cascade do |t|
@@ -66,6 +74,14 @@ ActiveRecord::Schema.define(version: 20170806011154) do
     t.index ["manufacturer_name"], name: "index_medicines_on_manufacturer_name", using: :btree
     t.index ["name"], name: "index_medicines_on_name", using: :btree
     t.index ["number"], name: "index_medicines_on_number", using: :btree
+  end
+
+  create_table "medsearches", force: :cascade do |t|
+    t.string   "query"
+    t.string   "user_email"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|

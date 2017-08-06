@@ -1,0 +1,2 @@
+module MedsearchesHelper
+end
