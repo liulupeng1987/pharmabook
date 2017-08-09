@@ -1,0 +1,23 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> User search apis list </h2>
+
+  <table class="table">
+      <thead>
+        <tr>
+          <td>User's email</td>
+          <td>Query medicine</td>
+          <td>Search Time</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @apisearches.each do |apisearch| %>
+        <tr>
+          <td><%= apisearch.user_email %></td>
+          <td><%= apisearch.query %></td>
+          <td><%= apisearch.created_at%></td>
+        </tr>
+        <% end %>
+      </tbody>
+  </table>
+</div>

@@ -22,8 +22,16 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :apisearches
-  resources :medsearches
+  resources :apisearches do
+    collection do
+      get :inspect
+    end
+  end
+  resources :medsearches do
+    collection do
+      get :inspect
+    end
+  end
 
   namespace :admin do
     resources :products

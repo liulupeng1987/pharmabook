@@ -9,4 +9,8 @@ class User < ApplicationRecord
     is_admin
   end
 
+  def inspector?
+    is_inspector
+  end
+
 end

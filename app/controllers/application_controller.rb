@@ -7,6 +7,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def inspector_required
+   if !current_user.inspector?
+     redirect_to "/", alert: "You are not customer."
+   end
+  end
+
   helper_method :current_cart
 
   def current_cart
