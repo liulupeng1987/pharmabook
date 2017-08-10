@@ -47,6 +47,15 @@ class Admin::MedicineManufacturersController < ApplicationController
     redirect_to admin_medicine_manufacturers_path
   end
 
+  def search
+    if params[:search].present?
+      @medicine_manufacturers = MedicineManufacturer.search(params[:search], fields:["name", "contact_info"], page: params[:page], per_page: 20)
+    else
+      @medicine_manufacturers = MedicineManufacturer.all.paginate(:page => params[:page], :per_page => 20)
+    end
+  end
+  
+
   private
 
   def medicine_manufacturer_params

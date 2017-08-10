@@ -4,10 +4,10 @@ class ApisearchesController < ApplicationController
 
 
   def index
-    @apisearches = Apisearch.all
+    @apisearches = Apisearch.all.paginate(:page => params[:page], :per_page => 20)
   end
 
   def inspect
-    @apisearches = Apisearch.all
+    @apisearches = Apisearch.all.paginate(:page => params[:page], :per_page => 20)
   end
 end

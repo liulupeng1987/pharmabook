@@ -35,11 +35,22 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :products
-    resources :apis
+    resources :apis do
+      collection do
+        get :search
+      end
+    end
     resources :medicine_manufacturers do
       resources :medicines
+      collection do
+        get :search
+      end
     end
-    resources :medicines
+    resources :medicines do
+      collection do
+        get :search
+      end
+    end
     resources :orders do
       member do
         post :cancel

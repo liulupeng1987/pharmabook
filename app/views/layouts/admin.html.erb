@@ -11,8 +11,9 @@
   <div class="container-fluid">
     <%= render "common/navbar" %>
     <div class="row adminlayout">
-      <div class="col-md-2">
+      <div class="col-md-2 nav-left-style">
         <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+          <hr>
           <li><%= link_to("Apis", admin_apis_path) %></li>
           <li><%= link_to("Medicines", admin_medicines_path) %></li>
           <li><%= link_to("Manufacturers", admin_medicine_manufacturers_path) %></li>
