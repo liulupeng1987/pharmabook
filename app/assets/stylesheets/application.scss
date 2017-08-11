@@ -18,6 +18,18 @@
 @import "bootstrap";
 @import "font-awesome";
 
+
+body{
+    overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+}
+
+p{
+    font-size: 14px;
+    line-height: 20px;
+}
+
   .top-margin {
     margin-top: 20px;
   }
@@ -285,7 +297,7 @@
 
 .short-line {
     display: block;
-    background: #35CCC6;
+    background: #cdbfe3;
     border-style: none;
     border-radius: 0;
     margin-left: auto;
@@ -300,6 +312,14 @@
 
 h2.section-title{
     color: #4C4C4C;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+h2.section-title2{
+    color: #4C4C4C;
+    margin-top: 100px;
     margin-bottom: 30px;
     font-size: 24px;
     font-weight: 700;
@@ -366,4 +386,50 @@ p.index-contect{
 
 .talk-about-us .carousel-indicators {
     bottom: -70px;
+}
+
+
+
+/*===== our client ====*/
+.support{
+    text-align: center;
+    height: 200px;
+    background: image_url("start.jpg") no-repeat scroll top center/ cover;
+
+    div{
+      margin-top: 55px;
+    }
+}
+
+/*===== button ====*/
+.btn.btn-primary-welcome{
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
+    padding: 10px 20px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.btn.btn-default-welcome:hover,
+.btn.btn-primary-welcome:hover{
+    background-color: #6f5499;
+    border-color: #217F7B;
+    color: #fff;
+}
+
+.btn.btn-primary-welcome,
+.btn.btn-default-welcome,
+.what-we-do .do-box,
+.service-overflow {
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+
+.margin-our-experts {
+  margin-bottom: 30px;
 }
