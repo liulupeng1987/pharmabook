@@ -42,14 +42,16 @@
     background-color: #6f5499;
   }
 
-
+  #id_wrapper {
+      /* 設定高度最小為100%, 如果內容區塊很多, 可以長大 */
+      min-height: 100%;
+      /* 位置設為relative, 作為footer區塊位置的參考 */
+      // position: relative;
+  }
+  
   //登录注册页面
   .log-page-bg {
-    height: 900px;
-    background-size: cover;                             //确保图片完全撑开
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-image: url(https://ooo.0o0.ooo/2017/05/21/592135630adc6.jpg);
+    height: 500px;
   }
   .log-page {
     margin-top: 60px;

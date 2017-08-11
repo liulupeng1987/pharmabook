@@ -8,13 +8,16 @@
   </head>
 
   <body>
+    <div id="id_wrapper">
       <div class="container-fluid">
         <%= render "common/navbar" %>
         <%= render "common/flashes" %>
         <div class="row adminlayout">
           <%= yield %>
         </div>
-      <div>
+      </div>
+    </div>
+
 
       <%= render "common/footer" %>
 
