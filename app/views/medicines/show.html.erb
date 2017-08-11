@@ -14,7 +14,7 @@
         <%= @medicine.medicine_manufacturer.name %>
       </td>
       <td>
-        <%= @medicine.medicine_manufacturer.website %>
+        <%= link_to(@medicine.medicine_manufacturer.website, @medicine.medicine_manufacturer.website)%>
       </td>
       <td>
         <%= @medicine.medicine_manufacturer.contact_info %>

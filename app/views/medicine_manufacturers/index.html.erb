@@ -22,7 +22,7 @@
             <%= link_to(medicine_manufacturer.name, medicine_manufacturer_path(medicine_manufacturer)) %>
           </td>
           <td>
-            <%= medicine_manufacturer.website %>
+            <%= link_to(medicine_manufacturer.website, medicine_manufacturer.website)%>
           </td>
           <td>
             <%= simple_format(medicine_manufacturer.contact_info) %>

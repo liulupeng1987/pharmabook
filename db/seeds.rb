@@ -6261,7 +6261,7 @@ Tel：+86-0551-64846195/64846007
 Fax：+86-0551-64846082
 Email：bbcasimon@hotmail.com  &  admin@bbcapharma.com
 Add：NO. 16 Dalian Road, Baohe industrial park, Hefei, Anhui province, China, 230051 ")
-MedicineManufacturer.create!(name: "Anqiu Lu'an Pharmaceutical Co., Ltd.", website: "www.luanpharm.com", contact_info: "Weifang Lu'an Import & Export Co., Ltd.
+MedicineManufacturer.create!(name: "Anqiu Lu'an Pharmaceutical Co., Ltd.", website: "http://www.luanpharm.com", contact_info: "Weifang Lu'an Import & Export Co., Ltd.
 (Subsidiary of Anqiu Lu'an Pharmaceutical Co., Ltd.in replace of International Business Department of Anqiu Lu'an Pharmaceutical Co., Ltd.)
 Address: No.35 Weixu North Road, Anqiu,Shandong, China. Post Code 262100
 (Actual same location as Xiao He Ya, North Part of City, Anqiu, Shandong, China)
@@ -6311,12 +6311,12 @@ Email: fksales@fz-antibiotic.com
 
 MEDICINE SALES DEPT.   ( Managing: Preparation )
 Tel:  0591-83831136, 83836553")
-MedicineManufacturer.create!(name: "Furen Pharmaceutical Group Co., Ltd.", website: "www.furen.com.cn", contact_info: "Email: info@furen.com.cn.
+MedicineManufacturer.create!(name: "Furen Pharmaceutical Group Co., Ltd.", website: "http://www.furen.com.cn", contact_info: "Email: info@furen.com.cn.
 Tel: +86-371-60113597;
 Fax :+86-371-60113596. F
 MP: +86-135 1380 8736;
 Add: 1 Yu'nan St., Kaifeng, Henan, China (Mainland)  Kaifeng, Henan, China")
-MedicineManufacturer.create!(name: "HEC Pharm", website: "www.hecpharm.com/", contact_info: "Add: Dong Yang Guang Park, Shangsha, Chang'an, Dongguan, Guangdong, 523871
+MedicineManufacturer.create!(name: "HEC Pharm", website: "http://www.hecpharm.com/", contact_info: "Add: Dong Yang Guang Park, Shangsha, Chang'an, Dongguan, Guangdong, 523871
 Partnership & Business Development
 Phone: +86-769-85315888-2548
 Fax: +86-769-85370255
