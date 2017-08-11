@@ -48,7 +48,7 @@
       /* 位置設為relative, 作為footer區塊位置的參考 */
       // position: relative;
   }
-  
+
   //登录注册页面
   .log-page-bg {
     height: 500px;
@@ -63,3 +63,307 @@
     margin: 30px auto;
     height: 500px;
   }
+
+
+  /*===== intro 以下是welcome内容 ====*/
+.intro{
+    height: 450px;
+    // background: image_url("intro.jpg") no-repeat scroll top center/ cover;
+    background-color: #6f5499;
+}
+
+.intro-content > h1 {
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 80px;
+
+    text-transform: capitalize;
+    word-spacing: 6px;
+}
+.intro-content > h2 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+    word-spacing: 3px;
+}
+
+.intro-content > p {
+    color: #f8f8f8;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 55px;
+}
+
+/*===== our experts ====*/
+
+/* Feature与Category共用 */
+.our-experts{
+    background-color: #F2F2F2;
+
+    p{
+      letter-spacing: 1px;
+    }
+    a{
+      text-decoration:none;
+      color: #002E2E;
+    }
+
+    img{
+      width: 550px;
+    }
+}
+
+/*===== what we do ====*/
+.what-we-do{
+    text-align: center;
+
+    img{
+      margin-top: 35px;
+      margin-bottom: -35px;
+      width: 100px;
+    }
+}
+
+.what-we-do .do-box{
+    border: 1px solid transparent;
+}
+
+.do-box h3{
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.do-box p {
+    color: #666;
+    letter-spacing: 1px;
+    line-height: 22px;
+    margin: 40px 25px 40px 25px;
+}
+
+
+/*===== about us ====*/
+
+
+/*===== about us ====*/
+.about-us{
+    background-color: #121212;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.about-content{
+    margin: 60px 0 30px 20px;
+}
+
+.about-content h2.section-title {
+    color: #4A6BB5;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    margin-top: 0;
+    text-transform: uppercase;
+    word-spacing: 5px;
+    max-width: 535px;
+    line-height: 1.5;
+
+}
+
+.about-content > p{
+    color: #707070;
+    font-weight: 100;
+    line-height: 20px;
+    max-width: 535px;
+}
+
+.about-us img, .carousel-inner > .item > img{
+    height: 400px;
+}
+
+.about-us .ytp-title-link, .ytp-title-channel-name {
+    opacity: 0;
+}
+
+/*===== our service ====*/
+
+.work{
+    padding-bottom: 0;
+}
+
+.work .single-work img{
+    width: 100%;
+}
+
+.single-work{
+    position: relative;
+}
+
+.single-work img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.owl-theme .owl-controls .owl-page span {
+    background: #4A6BB5;
+    opacity: 0.3;
+    border-radius: 0;
+    height: 4px;
+    width: 25px;
+    -moz-transform: skewX(-45deg) skewY(0deg);
+    -webkit-transform: skewX(-45deg) skewY(0deg);
+    -o-transform: skewX(-45deg) skewY(0deg);
+    -ms-transform: skewX(-45deg) skewY(0deg);
+    transform: skewX(-45deg) skewY(0deg);
+}
+
+.owl-theme .owl-controls {
+    margin-top: 35px;
+}
+
+.service-overflow{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+}
+
+.single-work:hover .service-overflow{
+    opacity: 1;
+}
+
+.service-overflow h3{
+    color: #4A6BB5;
+    margin-top: 0;
+}
+
+.service-overflow p{
+    color: #888;
+    margin: 0 auto;
+    max-width: 260px;
+}
+
+.work-links .fa {
+    background: #4A6BB5 none repeat scroll 0 0;
+    border-radius: 0;
+    color: #fff;
+    cursor: pointer;
+    height: 50px;
+    font-size: 20px;
+    padding-top: 16px;
+    text-align: center;
+    width: 50px;
+}
+
+.work-links .fa:hover {
+    background-color: #f0f0f0;
+    color: #121212;
+}
+
+.work-links.list-inline > li {
+    display: block;
+}
+
+.btn.btn-primary-welcome{
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
+    padding: 10px 20px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.short-line {
+    display: block;
+    background: #35CCC6;
+    border-style: none;
+    border-radius: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10px;
+    margin-bottom: 30px;
+    z-index: 53;
+    width: 100px;
+    height: 1.5px;
+    position: relative;
+}
+
+h2.section-title{
+    color: #4C4C4C;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+p.index-contect{
+    color: #666;
+    line-height: 34px;
+    padding: 0 7px;
+}
+
+
+
+
+/*===== talk about us ====*/
+.talk-about-us{
+    padding-bottom: 160px;
+    padding-top: 60px;
+    color: #666;
+}
+
+.talk-about-us strong{
+    margin-top: 25px;
+    color: #4A6BB5;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.talk-about-us .item > img{
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.talk-about-us .item > p{
+    max-width: 600px;
+    letter-spacing: 1px;
+    margin: 0 auto;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.talk-about-us .carousel-indicators > li {
+    background-color: #dcdcdc;
+    border: 0 none;
+    height: 10px;
+    margin: 1px;
+    width: 10px;
+    border-radius: 0;
+    margin: 0 5px;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.talk-about-us .carousel-indicators li.active {
+    background-color: #4A6BB5;
+}
+
+.talk-about-us .carousel-indicators {
+    bottom: -70px;
+}
