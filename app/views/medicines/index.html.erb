@@ -10,7 +10,7 @@
           <td>Name</td>
           <td>License number</td>
           <td>Strength</td>
-          <td>Manufacturer name</td>
+          <td class="text-center">Manufacturer name <br>(click to show manufacturer's contact information)</td>
         </tr>
       </thead>
 
@@ -27,7 +27,7 @@
             <%= medicine.strength %>
           </td>
           <td>
-            <%= medicine.manufacturer_name %>
+            <%= link_to(medicine.manufacturer_name, medicine_path(medicine)) %>
           </td>
         </tr>
         <% end %>
