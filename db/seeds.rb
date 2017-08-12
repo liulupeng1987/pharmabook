@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
 u = User.new
 u.email = "liulupeng3385@163.com"
 u.country = "China"
@@ -6893,7 +6887,6 @@ Email: rockychen@@openzyc.com  rockychen08@yahoo.com.cn")
 MedicineManufacturer.create!(name: "SHENZHEN XINPENG BIOTECHNOLOGY CO.,LTD.", website: "http://www.xpbio.com/en/", contact_info: "Contact:  Semeo Liu
 Tel: (86) 0755-26980406   Fax: (86) 0755-26422947
 Mobile: +86 13603090246   Email: semeo@xpbio.com")
-
 
 Medicine.create!(name: "Tramadol Hydrochloride Injection", number: "H10800001", strength: "2ml:0.1g", manufacturer_name: "CSPC Ouyi Pharmaceutical Co., Ltd.", medicine_manufacturer_id: "59")
 Medicine.create!(name: "Carboprost Methylate Suppositories", number: "H10800006", strength: "1mg", manufacturer_name: "Northeast Pharmaceutical Group Co., Ltd", medicine_manufacturer_id: "10")
