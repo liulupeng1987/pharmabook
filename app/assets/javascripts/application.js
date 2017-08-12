@@ -17,7 +17,7 @@
 //= require bootstrap/dropdown
 //= require bootstrap-sprockets
 //= require summernote
-//= require_tree .
+//= require autosize.min
 
 $(document).ready(function() {
   $('#myCarousel').carousel({interval: 2000});
