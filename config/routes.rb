@@ -91,4 +91,7 @@ Rails.application.routes.draw do
     resources :orders
   end
 
+  resources :articles
+  resources :images, only: [:create, :destroy]
+
 end
