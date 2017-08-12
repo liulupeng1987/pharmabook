@@ -22,7 +22,7 @@
             <%= @medicine_manufacturer.website %>
           </td>
           <td>
-            <%= @medicine_manufacturer.contact_info %>
+            <%= simple_format(@medicine_manufacturer.contact_info) %>
           </td>
         </tr>
       </tbody>

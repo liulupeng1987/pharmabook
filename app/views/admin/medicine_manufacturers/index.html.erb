@@ -26,7 +26,7 @@
             <%= medicine_manufacturer.website %>
           </td>
           <td>
-            <%= medicine_manufacturer.contact_info %>
+            <%= simple_format(medicine_manufacturer.contact_info) %>
           </td>
           <td>
             <%= link_to("Edit", edit_admin_medicine_manufacturer_path(medicine_manufacturer)) %> |
