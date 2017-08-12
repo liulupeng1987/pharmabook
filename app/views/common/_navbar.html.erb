@@ -39,7 +39,7 @@
             <% end %>
           </li> -->
           <% if !current_user %>
-            <li><%= link_to("Sign up", new_user_registration_path) %> </li>
+            <li><%= link_to(content_tag(:i, "Sign up", class: "fa fa-user-plus"), new_user_registration_path) %></li>
             <li><%= link_to(content_tag(:i, " Log in", class: "fa fa-sign-in"), new_user_session_path) %></li>
           <% else %>
             <li class="dropdown">
@@ -48,6 +48,7 @@
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
+                <li><%= link_to("Edit my account", edit_user_registration_path, class: "li-style") %></li>
                 <% if current_user.admin? %>
                   <li><%= link_to("管理员", admin_medicines_path, class: "li-style") %></li>
                 <% end %>
