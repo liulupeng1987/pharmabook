@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user! , only: [:new]
   def index
     @products = Product.all.paginate(:page => params[:page], :per_page => 20)
   end
