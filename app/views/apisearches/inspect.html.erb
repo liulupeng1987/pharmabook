@@ -6,6 +6,8 @@
       <thead>
         <tr>
           <td>User's email</td>
+          <td>Company</td>
+          <td>Country</td>
           <td>Query medicine</td>
           <td>Search Time</td>
         </tr>
@@ -13,7 +15,9 @@
       <tbody>
         <% @apisearches.each do |apisearch| %>
         <tr>
-          <td><%= apisearch.user_email %></td>
+          <td><%= apisearch.user.email %></td>
+          <td><%= apisearch.user.company %></td>
+          <td><%= apisearch.user.country %></td>
           <td><%= apisearch.query %></td>
           <td><%= apisearch.created_at%></td>
         </tr>

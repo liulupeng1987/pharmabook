@@ -14,8 +14,7 @@ class MedicinesController < ApplicationController
       if params[:search].present?
         medsearch = Medsearch.new
         medsearch.query = params[:search]
-        medsearch.user_id = current_user.id
-        medsearch.user_email = current_user.email
+        medsearch.user = current_user
         medsearch.save
         @medicines = Medicine.search(params[:search], fields:["name", "number", "manufacturer"], page: params[:page], per_page: 20)
       else

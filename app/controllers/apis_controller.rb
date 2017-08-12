@@ -12,8 +12,7 @@ class ApisController < ApplicationController
     if params[:search].present?
       apisearch = Apisearch.new
       apisearch.query = params[:search]
-      apisearch.user_id = current_user.id
-      apisearch.user_email = current_user.email
+      apisearch.user = current_user
       apisearch.save
 
       @apis = Api.search(params[:search], fields:["name", "number", "manufacturer"], page: params[:page], per_page: 20)
