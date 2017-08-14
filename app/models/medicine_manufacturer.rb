@@ -1,5 +1,5 @@
 class MedicineManufacturer < ApplicationRecord
-  has_many :medicines
+  has_many :medicines, dependent: :destroy
   searchkick word_start: [:name, :number, :manufacturer_name]
   validates :name, :website, presence: true
 
