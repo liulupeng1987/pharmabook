@@ -19,6 +19,7 @@
 //= require bootstrap-sprockets
 //= require summernote
 //= require autosize.min
+//= require_tree .
 
 
 $(document).ready(function() {

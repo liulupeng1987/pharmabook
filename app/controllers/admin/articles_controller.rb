@@ -1,4 +1,5 @@
 class Admin::ArticlesController < ApplicationController
+  layout "admin"
   before_action :set_article, only: [:show, :edit, :update, :destroy, :reorder]
   before_action :admin_required
 
@@ -79,7 +80,7 @@ private
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :content)
+      params.require(:article).permit(:title, :author, :summary, :content, :is_hidden)
     end
 
 end

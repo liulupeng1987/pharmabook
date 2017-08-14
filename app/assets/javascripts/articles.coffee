@@ -18,8 +18,7 @@ $ ->
         img.setAttribute('id', data.image_id)
         $(that).summernote 'insertNode', img
 
-
-deleteFile = (file_id) ->
+  deleteFile = (file_id) ->
     $.ajax
       type: 'DELETE'
       url: "/images/#{file_id}"
@@ -27,7 +26,7 @@ deleteFile = (file_id) ->
       contentType: false
       processData: false
 
-ready = ->
+  ready = ->
     $('[data-provider="summernote"]').each ->
       $(this).summernote
         height: 200
@@ -39,7 +38,5 @@ ready = ->
             if !!image_id
               deleteFile image_id
             target.remove()
-
   $(document).ready(ready)
-
   $(document).on('turbolinks:load', ready)
