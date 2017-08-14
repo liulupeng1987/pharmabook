@@ -7,16 +7,26 @@
       <table class="table table-boldered">
         <thead>
           <tr>
+            <th>ID</td>
             <th>Title</th>
+            <th>Action</th>
             <th colspan="3"></th>
             <th>created time</th>
           </tr>
         </thead>
 
-      <tbody>
+      <tbody class="sortable">
           <% @articles.each do |article| %>
-            <tr>
-              <td><%= article.title %></td>
+            <tr data-reorder-url="<%= reorder_admin_article_path(article) %>">
+              <td><%= article.id %></td>
+              <td>
+                <span class="sortable_icon">|||</span>
+                <%= link_to article.title, admin_article_path(article) %>
+              </td>
+              <td>
+                <%= link_to "置顶", reorder_admin_article_path(article, :position => :first), :method => :post, :class => "btn btn-default" %>
+                <%= link_to "置底", reorder_admin_article_path(article, :position => :last), :method => :post, :class => "btn btn-default" %>
+              </td>
               <td><%= link_to 'Show', admin_article_path(article) %></td>
               <td><%= link_to 'Edit', edit_admin_article_path(article) %></td>
               <td><%= link_to 'Destroy', admin_article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -32,3 +42,26 @@
     </div>
   </div>
 </div>
+
+<script>
+
+$( ".sortable" ).sortable({
+  axis: 'y',       // 限制只能上下拖拉
+  items: 'tr',     // 拖拉整个 tr
+  cursor: 'move',  // 变更拖拉时的 icon
+  handle: ".sortable_icon",  // 限制只有点 ☰ 才能开始拖拉，砍掉这行的话，会是整个 tr 都可以进行拖拉，你可以试试看
+  stop: function(e, ui){     // 当拖拉结束时，会调用这个方法
+    ui.item.children('td').effect('highlight', {}, 1000)
+  },
+  update: function(e, ui) {   // 当拖拉结束并且 DOM 上的位置变更时，会调用这个方法
+    reorder_url = ui.item.data('reorder-url')
+    position = ui.item.index()  // 取得顺序
+    $.ajax({
+     type: 'POST',
+     url: reorder_url,
+     dataType: 'json',
+     data: { position: position }
+    })
+  }
+});
+</script>

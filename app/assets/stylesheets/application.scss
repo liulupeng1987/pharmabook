@@ -19,6 +19,16 @@
 @import "font-awesome";
 @import "summernote";
 
+@import "jquery-ui";
+
+.sortable .sortable_icon {
+ border: none;
+ color: #ECECEC;
+ font-size: 20px;
+ cursor: move;
+ padding-right: 10px;
+ }
+
 body{
     overflow-x: hidden;
     font-family: 'Open Sans', sans-serif;

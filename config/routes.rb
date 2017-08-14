@@ -61,7 +61,11 @@ Rails.application.routes.draw do
         post :return
       end
     end
-    resources :articles
+    resources :articles do
+      member do
+        post :reorder
+      end
+    end
   end
 
   resources :products do

@@ -1,11 +1,11 @@
 class Admin::ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, only: [:show, :edit, :update, :destroy, :reorder]
   before_action :admin_required
 
 # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.rank(:row_order).all
   end
 
 # GET /articles/1
@@ -59,6 +59,16 @@ class Admin::ArticlesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def reorder
+    @article.row_order_position = params[:position]
+    @article.save!
+
+    respond_to do |format|
+      format.html { redirect_to admin_articles_path }
+      format.json { render :json => { :message => "ok" }}
     end
   end
 

@@ -12,12 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require bootstrap-sprockets
 //= require summernote
 //= require autosize.min
+
 
 $(document).ready(function() {
   $('#myCarousel').carousel({interval: 2000});
