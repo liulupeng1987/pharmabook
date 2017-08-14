@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'about/index'
+
   devise_for :users
   match '/admin/users',   to: 'admin/users#index',   via: 'get'
   root 'welcome#index'
