@@ -1,18 +1,72 @@
 <!-- <div class="container">
   <div class="row">
-    <div class="col-md-12">
 
-      <p>
-        <strong>Title:</strong>
-        <%= @article.title %>
-      </p>
+    <div class="article-show">
 
-      <p>
-        <strong>Content:</strong>
-        <%=h raw @article.content %>
-      </p>
+      <div class="col-md-8 article-show-box">
 
-      <%= link_to 'Back', articles_path %>
+
+        <div class="article-title">
+          <h1><%= @article.title %></h1>
+        </div>
+
+
+        <div class="article-author">
+          <span> <%= @article.author %></span> ·
+          <span> <%= @article.created_at.strftime("%Y-%m-%d %H:%M:%S") %></span>
+        </div>
+
+        <div class="article-summary">
+          <p>
+            <blockquote>
+                <%= simple_format(@article.summary) %>
+            </blockquote>
+          </p>
+        </div>
+
+        <hr>
+
+
+        <div class="article-description">
+          <%= simple_format(@article.content) %>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div> -->
+<!--
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+
+      <div class="article-title">
+        <h1><%= @article.title %></h1>
+      </div>
+
+      <div class="article-author">
+        <span> <%= @article.author %></span> ·
+        <span> <%= @article.created_at.strftime("%Y-%m-%d %H:%M:%S") %></span>
+      </div>
+
+      <div class="article-summary">
+        <p>
+          <blockquote>
+              <%= simple_format(@article.summary) %>
+          </blockquote>
+        </p>
+      </div>
+
+      <hr>
+
+
+      <div>
+        <%= simple_format(@article.content) %>
+      </div>
+
+
+      <%= social_share_button_tag(@article.title) %>
 
     </div>
   </div>
@@ -23,7 +77,7 @@
 
     <div class="article-show">
 
-      <div class="col-md-8 article-show-box">
+      <div class="col-md-10 article-show-box">
 
         <!-- 标题 -->
         <div class="article-title">
@@ -45,12 +99,12 @@
           </p>
         </div>
 
-        <hr>
-
         <!-- 内容 -->
-        <div class="article-description">
+        <div>
           <%= simple_format(@article.content) %>
         </div>
+
+        <%= social_share_button_tag(@article.title) %>
 
       </div>
     </div>
