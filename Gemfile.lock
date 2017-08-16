@@ -67,6 +67,8 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap-wysihtml5-rails (0.3.3.8)
+      railties (>= 3.0)
     builder (3.2.3)
     byebug (9.0.6)
     capistrano (3.8.1)
@@ -395,6 +397,8 @@ GEM
       tilt (~> 2.0)
     sixarm_ruby_unaccent (1.1.2)
     slop (3.6.0)
+    social-share-button (0.10.0)
+      coffee-rails
     sort_alphabetical (1.1.0)
       unicode_utils (>= 1.2.2)
     spring (2.0.2)
@@ -449,6 +453,7 @@ DEPENDENCIES
   aasm
   awesome_rails_console
   bootstrap-sass
+  bootstrap-wysihtml5-rails
   byebug
   capistrano (~> 3.4)
   capistrano-passenger
@@ -477,6 +482,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   searchkick
   simple_form
+  social-share-button
   spring
   spring-watcher-listen (~> 2.0.0)
   summernote-rails
