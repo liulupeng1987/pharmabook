@@ -1,5 +1,5 @@
 class ApisController < ApplicationController
-  before_action :authenticate_user! , only: [:new]
+  before_action :authenticate_user! , only: [:search]
   def show
     @api = Api.find(params[:id])
   end
