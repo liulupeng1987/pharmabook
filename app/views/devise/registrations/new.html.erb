@@ -10,12 +10,12 @@
         <div class="form-inputs">
           <%= f.input :email, required: true, autofocus: true %>
           <p>
-          <strong>*Select your country</strong>
+          <strong>Select your country</strong>
           <br>
-          <%= f.country_select :country, required: true, autofocus: true %>
+          <%= f.country_select("country", priority_countries: ["CN"]) %>
           </p>
           <p>
-          
+
           <%= f.input :company, required: true, autofocus: true %>
           </p>
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>

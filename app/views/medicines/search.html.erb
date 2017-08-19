@@ -8,7 +8,7 @@
         <tr>
           <td>Name</td>
           <td>License number</td>
-          <td>strength</td>
+          <td>Strength</td>
           <td>Manufacturer name</td>
         </tr>
       </thead>
@@ -19,7 +19,9 @@
           <td><%= medicine.name %></td>
           <td><%= medicine.number %></td>
           <td><%= medicine.strength %></td>
-          <td><%= medicine.manufacturer_name %></td>
+          <td>
+            <%= link_to(medicine.manufacturer_name, medicine_path(medicine)) %>
+          </td>
           <% if current_user.admin? %>
             <td>
               <%= link_to("Edit", edit_admin_medicine_path(medicine)) %> |

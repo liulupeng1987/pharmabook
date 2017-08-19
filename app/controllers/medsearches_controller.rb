@@ -7,7 +7,8 @@ class MedsearchesController < ApplicationController
   end
 
   def inspect
-    @medsearches = Medsearch.all.paginate(:page => params[:page], :per_page => 20)
+    @medsearches = Medsearch.all
+    @medsearches = Medsearch.paginate(:page => params[:page], :per_page => 20)
   end
 
 end
