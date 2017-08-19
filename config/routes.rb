@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'about/index'
-
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "users/registrations" }
   match '/admin/users',   to: 'admin/users#index',   via: 'get'
   root 'welcome#index'
 
