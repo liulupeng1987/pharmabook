@@ -1,4 +1,5 @@
 class Api < ApplicationRecord
+  belongs_to :medicine_manufacturer
   searchkick word_start: [:name, :number, :manufacturer]
   validates :name, :number, :manufacturer, presence: true
 

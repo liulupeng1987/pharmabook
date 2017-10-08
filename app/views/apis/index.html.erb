@@ -11,6 +11,8 @@
           <td>Name</td>
           <td>License number</td>
           <td>Manufacturer name</td>
+          <td>Manufacturer website</td>
+          <td>Email</td>
         </tr>
       </thead>
 
@@ -26,6 +28,9 @@
           <td>
             <%= api.manufacturer %>
           </td>
+          <td><%= api.medicine_manufacturer.website%></td>
+          <td><%= api.medicine_manufacturer.email%></td>
+
         </tr>
         <% end %>
       </tbody>

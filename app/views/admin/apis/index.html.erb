@@ -7,6 +7,7 @@
 <table class="table table-boldered">
   <% @apis.each do |api| %>
   <tr>
+    <td><%=api.id %></td>
     <td>
       <%= link_to(api.name, admin_api_path(api)) %>
     </td>

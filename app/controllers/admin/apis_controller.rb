@@ -58,6 +58,6 @@ class Admin::ApisController < ApplicationController
   private
 
   def api_params
-    params.require(:api).permit(:name, :number, :manufacturer)
+    params.require(:api).permit(:name, :number, :manufacturer, :medicine_manufacturer_id)
   end
 end
