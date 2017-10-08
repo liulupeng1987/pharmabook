@@ -4,6 +4,9 @@
     <div class="pull-right" style="padding-bottom: 20px;">
       <%= link_to("新增厂家", new_admin_medicine_manufacturer_path, class: "btn btn-primary btn-sm") %>
     </div>
+    <div class="text-center">
+      <%= will_paginate @medicine_manufacturers %>
+    </div>
 
     <table class="table table-boldered">
       <thead>
