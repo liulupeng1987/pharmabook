@@ -4,7 +4,7 @@ class Admin::MedicineManufacturersController < ApplicationController
   before_action :admin_required
 
   def index
-    @medicine_manufacturers = MedicineManufacturer.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 20)
+    @medicine_manufacturers = MedicineManufacturer.all.order('created_at ASC').paginate(:page => params[:page], :per_page => 20)
   end
 
   def show
@@ -49,7 +49,7 @@ class Admin::MedicineManufacturersController < ApplicationController
 
   def search
     if params[:search].present?
-      @medicine_manufacturers = MedicineManufacturer.search(params[:search], fields:["name", "contact_info"], page: params[:page], per_page: 20)
+      @medicine_manufacturers = MedicineManufacturer.search(params[:search], fields:["name", "id"], page: params[:page], per_page: 20)
     else
       @medicine_manufacturers = MedicineManufacturer.all.paginate(:page => params[:page], :per_page => 20)
     end
