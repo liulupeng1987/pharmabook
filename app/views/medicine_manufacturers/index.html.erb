@@ -6,8 +6,9 @@
       <thead>
         <tr>
           <td>ID</td>
-          <td>Name</td>
+          <td>Name (click to show detail info)</td>
           <td>Website</td>
+          <td>Email</td>
           <td>Contact information</td>
         </tr>
       </thead>
@@ -23,6 +24,9 @@
           </td>
           <td>
             <%= link_to(medicine_manufacturer.website, medicine_manufacturer.website)%>
+          </td>
+          <td>
+            <%= medicine_manufacturer.email %>
           </td>
           <td>
             <%= simple_format(medicine_manufacturer.contact_info) %>

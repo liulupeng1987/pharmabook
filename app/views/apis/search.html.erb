@@ -20,7 +20,7 @@
         <tr>
           <td><%= api.name %></td>
           <td><%= api.number %></td>
-          <td><%= api.manufacturer %></td>
+          <td><%= link_to(api.medicine_manufacturer.name, medicine_manufacturer_path(api.medicine_manufacturer)) %></td>
           <td><%= api.medicine_manufacturer.website%></td>
           <td><%= api.medicine_manufacturer.email%></td>
           <% if current_user.admin? %>

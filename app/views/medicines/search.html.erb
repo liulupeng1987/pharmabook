@@ -10,6 +10,8 @@
           <td>License number</td>
           <td>Strength</td>
           <td>Manufacturer name</td>
+          <td>Website</td>
+          <td>Email</td>
         </tr>
       </thead>
 
@@ -20,7 +22,13 @@
           <td><%= medicine.number %></td>
           <td><%= medicine.strength %></td>
           <td>
-            <%= link_to(medicine.manufacturer_name, medicine_path(medicine)) %>
+            <%= link_to(medicine.medicine_manufacturer.name, medicine_manufacturer_path(medicine.medicine_manufacturer)) %>
+          </td>
+          <td>
+            <%= medicine.medicine_manufacturer.website %>
+          </td>
+          <td>
+            <%= medicine.medicine_manufacturer.email %>
           </td>
           <% if current_user.admin? %>
             <td>

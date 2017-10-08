@@ -9,6 +9,7 @@
           <td>ID</td>
           <td>Name</td>
           <td>Website</td>
+          <td>Email</td>
           <td>contact_info</td>
         </tr>
       </thead>
@@ -17,8 +18,9 @@
         <% @medicine_manufacturers.each do |medicine_manufacturer| %>
         <tr>
           <td><%= medicine_manufacturer.id %></td>
-          <td><%= medicine_manufacturer.name %></td>
+          <td><%= link_to(medicine_manufacturer.name, medicine_manufacturer_path(medicine_manufacturer)) %></td>
           <td><%= medicine_manufacturer.website %></td>
+          <td><%= medicine_manufacturer.email %></td>
           <td><%= simple_format(medicine_manufacturer.contact_info) %></td>
           <% if current_user.admin? %>
             <td>

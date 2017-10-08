@@ -2,6 +2,33 @@
 
 <p>
   <%= simple_format(@api.number) %>
-  <%= simple_format(@api.manufacturer) %>
-
 </p>
+
+
+<table class="table table-boldered">
+  <thead>
+    <tr>
+      <th>Manufacturer Name</th>
+      <th>Website</th>
+      <th>Email</th>
+      <th>Contact Information</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        <%= @api.medicine_manufacturer.name %>
+      </td>
+      <td>
+        <%= link_to(@api.medicine_manufacturer.website, @api.medicine_manufacturer.website)%>
+      </td>
+      <td>
+        <%= @api.medicine_manufacturer.email %>
+      </td>
+      <td>
+        <%= simple_format(@api.medicine_manufacturer.contact_info) %>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -30,10 +30,45 @@
 </div>
 
 
+
 <div class="container top-margin">
 
   <div class="row">
-  <h3> Product list (Finished Medicines) </h3>
+  <h3> API list  </h3>
+
+    <table class="table table-boldered">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>License number</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @apis.each do |api| %>
+        <tr>
+          <td>
+            <%= api.name %>
+          </td>
+          <td>
+            <%= api.number %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="text-center">
+      <%= will_paginate @apis %>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="container top-margin">
+
+  <div class="row">
+  <h3> Finished Medicines list </h3>
 
     <table class="table table-boldered">
       <thead>
