@@ -4,7 +4,7 @@ class Admin::MedicineManufacturersController < ApplicationController
   before_action :admin_required
 
   def index
-    @medicine_manufacturers = MedicineManufacturer.all.paginate(:page => params[:page], :per_page => 20)
+    @medicine_manufacturers = MedicineManufacturer.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 20)
   end
 
   def show
@@ -54,11 +54,11 @@ class Admin::MedicineManufacturersController < ApplicationController
       @medicine_manufacturers = MedicineManufacturer.all.paginate(:page => params[:page], :per_page => 20)
     end
   end
-  
+
 
   private
 
   def medicine_manufacturer_params
-    params.require(:medicine_manufacturer).permit(:name, :website, :contact_info)
+    params.require(:medicine_manufacturer).permit(:name, :website, :email, :chinesename, :contact_info)
   end
 end
