@@ -4,7 +4,7 @@ class Admin::MedicineManufacturersController < ApplicationController
   before_action :admin_required
 
   def index
-    @medicine_manufacturers = MedicineManufacturer.all.order('created_at ASC').paginate(:page => params[:page], :per_page => 20)
+    @medicine_manufacturers = MedicineManufacturer.all.order("created_at DESC").order('created_at ASC').paginate(:page => params[:page], :per_page => 20)
   end
 
   def show

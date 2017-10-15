@@ -16,9 +16,9 @@ class MedicinesController < ApplicationController
         medsearch.query = params[:search]
         medsearch.user = current_user
         medsearch.save
-        @medicines = Medicine.search(params[:search], fields:["name", "number", "manufacturer"], page: params[:page], per_page: 20)
+        @medicines = Medicine.search(params[:search], fields:["name", "number", "manufacturer"], order: {id: :asc}, page: params[:page], per_page: 20)
       else
-        @medicines = Medicine.all.paginate(:page => params[:page], :per_page => 20)
+        @medicines = Medicine.all.order("created_at ASC").paginate(:page => params[:page], :per_page => 20)
       end
     end
 

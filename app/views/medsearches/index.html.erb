@@ -5,6 +5,7 @@
   <table class="table">
       <thead>
         <tr>
+          <td>ID</td>
           <td>User's email</td>
           <td>Company</td>
           <td>Country</td>
@@ -15,6 +16,7 @@
       <tbody>
         <% @medsearches.each do |medsearch| %>
         <tr>
+          <td><%= medsearch.id %></td>
           <td><%= medsearch.user.email %></td>
           <td><%= medsearch.user.company %></td>
           <td><%= medsearch.user.country %></td>

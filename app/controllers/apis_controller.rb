@@ -15,9 +15,9 @@ class ApisController < ApplicationController
       apisearch.user = current_user
       apisearch.save
 
-      @apis = Api.search(params[:search], fields:["name", "number", "manufacturer"], page: params[:page], per_page: 20)
+      @apis = Api.search(params[:search], fields:["name", "number", "manufacturer"], order: {id: :asc}, page: params[:page], per_page: 20)
     else
-      @apis = Api.all.paginate(:page => params[:page], :per_page => 20)
+      @apis = Api.all.order("created_at ASC").paginate(:page => params[:page], :per_page => 20)
     end
   end
 

@@ -4,12 +4,10 @@ class ApisearchesController < ApplicationController
 
 
   def index
-    @apisearches = Apisearch.all.paginate(:page => params[:page], :per_page => 20)
+    @apisearches = Apisearch.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
   end
 
   def inspect
-    @apisearches = Apisearch.all
-    # where.not(:Apisearch.user.country => "CN")
-    @apisearches = Apisearch.paginate(:page => params[:page], :per_page => 20)
+    @apisearches = Apisearch.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
   end
 end
