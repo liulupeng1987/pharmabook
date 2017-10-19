@@ -387,6 +387,7 @@ GEM
       activemodel (>= 4.1)
       elasticsearch (>= 1)
       hashie
+    seo_helper (1.0.3)
     simple_form (3.5.0)
       actionpack (> 4, < 5.2)
       activemodel (> 4, < 5.2)
@@ -481,6 +482,7 @@ DEPENDENCIES
   refile-mini_magick
   sass-rails (~> 5.0)
   searchkick
+  seo_helper
   simple_form
   social-share-button
   spring

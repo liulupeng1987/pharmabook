@@ -4,6 +4,7 @@ class MedicineManufacturersController < ApplicationController
     @medicine_manufacturer = MedicineManufacturer.find(params[:id])
     @apis = @medicine_manufacturer.apis.paginate(:page => params[:page], :per_page => 20)
     @medicines = @medicine_manufacturer.medicines.paginate(:page => params[:page], :per_page => 20)
+    set_page_title @medicine_manufacturer.name
   end
 
   def index
