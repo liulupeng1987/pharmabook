@@ -1,0 +1,30 @@
+<h1> <%= @anda.product %></h1>
+
+
+<table class="table table-boldered">
+  <thead>
+    <tr>
+      <th>Medicine Name</th>
+      <th>Strength</th>
+      <th>Anda Number</th>
+      <th>Manufacturer name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        <%= @anda.product %>
+      </td>
+      <td>
+        <%= @anda.strength %>
+      </td>
+      <td>
+        <%= @anda.number %>
+      </td>
+      <td>
+        <%= @anda.medicine_manufacturer.name %>
+      </td>
+    </tr>
+  </tbody>
+</table>

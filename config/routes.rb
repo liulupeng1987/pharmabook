@@ -40,6 +40,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :andasearches do
+    collection do
+      get :inspect
+    end
+  end
+
   namespace :admin do
     resources :products
     resources :apis do
@@ -49,6 +55,11 @@ Rails.application.routes.draw do
     end
     resources :medicine_manufacturers do
       resources :medicines
+      collection do
+        get :search
+      end
+    end
+    resources :andas do
       collection do
         get :search
       end
@@ -101,6 +112,12 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :orders
+  end
+
+  resources :andas do
+    collection do
+      get :search
+    end
   end
 
   resources :articles

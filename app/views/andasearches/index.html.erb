@@ -1,0 +1,32 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> User search andas list </h2>
+
+  <table class="table">
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>User's email</td>
+          <td>Company</td>
+          <td>Country</td>
+          <td>Query medicine</td>
+          <td>Search Time</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @andasearches.each do |andasearch| %>
+        <tr>
+          <td><%= andasearch.id %></td>
+          <td><%= andasearch.user.email %></td>
+          <td><%= andasearch.user.company %></td>
+          <td><%= andasearch.user.country %></td>
+          <td><%= andasearch.query %></td>
+          <td><%= andasearch.created_at%></td>
+        </tr>
+        <% end %>
+      </tbody>
+  </table>
+  <div class="text-center">
+    <%= will_paginate @andasearches %>
+  </div>
+</div>

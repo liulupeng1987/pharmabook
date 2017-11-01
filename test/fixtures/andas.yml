@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product: MyString
+  medicine_manufacturer_id: 1
+  strength: MyString
+  number: MyString
+
+two:
+  product: MyString
+  medicine_manufacturer_id: 1
+  strength: MyString
+  number: MyString

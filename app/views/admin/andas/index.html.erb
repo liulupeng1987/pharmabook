@@ -1,0 +1,41 @@
+<div class="pull-right">
+  <%= link_to("Add an ANDA", new_admin_anda_path, :class => "btn btn-default") %>
+</div>
+<%= render "searchbox" %>
+
+    <table class="table table-boldered">
+      <thead>
+        <tr>
+          <td>Medicine Name</td>
+          <td>Strength</td>
+          <td>ANDA number</td>
+          <td>Manufacturer</td>
+          <td>Manipulation</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @andas.each do |anda| %>
+        <tr>
+          <td>
+            <%= anda.product %>
+          </td>
+          <td>
+            <%= anda.strength %>
+          </td>
+          <td>
+            <%= anda.number %>
+          </td>
+          <td><%= anda.medicine_manufacturer.name%></td>
+          <td>
+            <%= link_to("Edit", edit_admin_anda_path(anda)) %> |
+            <%= link_to("Destroy", admin_anda_path(anda), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+          </td>
+
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="text-center">
+      <%= will_paginate @andas %>
+    </div>

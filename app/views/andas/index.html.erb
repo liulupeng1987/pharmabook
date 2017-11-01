@@ -1,0 +1,41 @@
+
+<%= render "searchbox" %>
+<div class="container top-margin">
+
+  <div class="row">
+
+
+    <table class="table table-boldered">
+      <thead>
+        <tr>
+          <td>Medicine Name</td>
+          <td>Strength</td>
+          <td>ANDA number</td>
+          <td>Manufacturer</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @andas.each do |anda| %>
+        <tr>
+          <td>
+            <%= anda.product %>
+          </td>
+          <td>
+            <%= anda.strength %>
+          </td>
+          <td>
+            <%= anda.number %>
+          </td>
+          <td><%= anda.medicine_manufacturer.name%></td>
+
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="text-center">
+      <%= will_paginate @andas %>
+    </div>
+
+  </div>
+</div>

@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171008125117) do
+ActiveRecord::Schema.define(version: 20171101142420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "andas", force: :cascade do |t|
+    t.string   "product"
+    t.integer  "medicine_manufacturer_id"
+    t.string   "strength"
+    t.string   "number"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "manufacturer"
+  end
+
+  create_table "andasearches", force: :cascade do |t|
+    t.string   "query"
+    t.string   "user_email"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "apis", force: :cascade do |t|
     t.string   "name"

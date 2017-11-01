@@ -30,6 +30,9 @@
             <%= link_to("Manufacturers", medicine_manufacturers_path) %>
           </li>
           <li>
+            <%= link_to("ANDAs", andas_path) %>
+          </li>
+          <li>
             <%= link_to("Articles", articles_path) %>
           </li>
           <li>
@@ -59,6 +62,7 @@
                 <% if current_user.inspector? %>
                   <li><%= link_to("API Search Log", inspect_apisearches_path, class: "li-style") %></li>
                   <li><%= link_to("Medicine Search Log", inspect_medsearches_path, class: "li-style") %></li>
+                  <li><%= link_to("ANDA Search Log", inspect_andasearches_path, class: "li-style") %></li>
                   <li><%= link_to("User list", inspect_users_path, class: "li-style") %></li>
                 <% end %>
                 <li><%= link_to("Log out", destroy_user_session_path, method: :delete, class: "li-style") %></li>
