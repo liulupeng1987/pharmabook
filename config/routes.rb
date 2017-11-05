@@ -66,6 +66,9 @@ Rails.application.routes.draw do
       collection do
         get :search
       end
+      collection do
+        post :import
+      end
     end
     resources :medicines do
       collection do

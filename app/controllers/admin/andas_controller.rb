@@ -46,13 +46,18 @@ class Admin::AndasController < ApplicationController
   end
 
 
-      def search
-        if params[:search].present?
-          @andas = Anda.search(params[:search], fields:["product", "number", "manufacturer"], page: params[:page], per_page: 20)
-        else
-          @andas = Anda.all.paginate(:page => params[:page], :per_page => 20)
-        end
-      end
+  def search
+    if params[:search].present?
+      @andas = Anda.search(params[:search], fields:["product", "number", "manufacturer"], page: params[:page], per_page: 20)
+    else
+      @andas = Anda.all.paginate(:page => params[:page], :per_page => 20)
+    end
+  end
+  
+  def import
+    Anda.import(params[:file])
+    redirect_to admin_andas_path, notice: "ANDAs imported."
+  end
 
   private
 

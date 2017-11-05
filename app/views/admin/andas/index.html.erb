@@ -39,3 +39,10 @@
     <div class="text-center">
       <%= will_paginate @andas %>
     </div>
+
+    <h2>Import ANDAs</h2>
+
+    <%= form_tag import_admin_andas_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "Import" %>
+    <% end %>
