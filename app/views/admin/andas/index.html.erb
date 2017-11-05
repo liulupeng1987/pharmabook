@@ -6,10 +6,13 @@
     <table class="table table-boldered">
       <thead>
         <tr>
+          <td>ID</td>
           <td>Medicine Name</td>
           <td>Strength</td>
           <td>ANDA number</td>
           <td>Manufacturer</td>
+          <td>Submission Status</td>
+          <td>Approval date</td>
           <td>Manipulation</td>
         </tr>
       </thead>
@@ -17,6 +20,7 @@
       <tbody>
         <% @andas.each do |anda| %>
         <tr>
+          <td><%=anda.id %></td>
           <td>
             <%= anda.product %>
           </td>
@@ -26,7 +30,9 @@
           <td>
             <%= anda.number %>
           </td>
-          <td><%= anda.medicine_manufacturer.name%></td>
+          <td><%= anda.manufacturer%></td>
+          <td><%= anda.submission_status %></td>
+          <td><%= anda.approval_date %></td>
           <td>
             <%= link_to("Edit", edit_admin_anda_path(anda)) %> |
             <%= link_to("Destroy", admin_anda_path(anda), :method => :delete, :data => { :confirm => "Are you sure?" }) %>

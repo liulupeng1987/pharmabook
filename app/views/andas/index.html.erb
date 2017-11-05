@@ -12,6 +12,8 @@
           <td>Strength</td>
           <td>ANDA number</td>
           <td>Manufacturer</td>
+          <td>Submission Status</td>
+          <td>Approval Date</td>
         </tr>
       </thead>
 
@@ -27,7 +29,11 @@
           <td>
             <%= anda.number %>
           </td>
-          <td><%= anda.medicine_manufacturer.name%></td>
+          <td>
+            <%= link_to(anda.manufacturer, medicine_manufacturer_path(anda.medicine_manufacturer)) %>
+          </td>
+          <td><%= anda.submission_status %></td>
+          <td><%= anda.approval_date %></td>
 
         </tr>
         <% end %>

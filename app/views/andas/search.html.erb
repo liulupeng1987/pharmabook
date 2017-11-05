@@ -13,6 +13,7 @@
           <td>Medicine Name</td>
           <td>Strength</td>
           <td>ANDA number</td>
+          <td>Submission Status</td>
           <td>Manufacturer</td>
           <td>Manufacturer website</td>
           <td>Email</td>
@@ -25,6 +26,7 @@
           <td><%= anda.product %></td>
           <td><%= anda.strength %></td>
           <td><%= anda.number %></td>
+          <td><%= anda.submission_status %></td>
           <td><%= link_to(anda.manufacturer, medicine_manufacturer_path(anda.medicine_manufacturer)) %></td>
           <td><%= anda.medicine_manufacturer.website%></td>
           <td><%= anda.medicine_manufacturer.email%></td>
