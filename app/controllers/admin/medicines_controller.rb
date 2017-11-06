@@ -55,6 +55,11 @@ class Admin::MedicinesController < ApplicationController
       end
     end
 
+    def import
+      Medicine.import(params[:file])
+      redirect_to admin_medicines_path, notice: "Medicine Manufacturers imported."
+    end
+
   private
 
   def medicine_params

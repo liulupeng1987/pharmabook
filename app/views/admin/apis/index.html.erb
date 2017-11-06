@@ -28,3 +28,10 @@
 <div class="text-center">
   <%= will_paginate @apis %>
 </div>
+
+<h2>Import APIs</h2>
+
+      <%= form_tag import_admin_apis_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Import" %>
+      <% end %>

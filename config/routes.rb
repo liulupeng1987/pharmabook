@@ -52,6 +52,9 @@ Rails.application.routes.draw do
       collection do
         get :search
       end
+      collection do
+        post :import
+      end
     end
     resources :medicine_manufacturers do
       resources :medicines
@@ -73,6 +76,9 @@ Rails.application.routes.draw do
     resources :medicines do
       collection do
         get :search
+      end
+      collection do
+        post :import
       end
     end
     resources :orders do

@@ -55,6 +55,11 @@ class Admin::ApisController < ApplicationController
       end
     end
 
+    def import
+      Api.import(params[:file])
+      redirect_to admin_apis_path, notice: "Apis imported."
+    end
+
   private
 
   def api_params
