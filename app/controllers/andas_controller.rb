@@ -1,5 +1,5 @@
 class AndasController < ApplicationController
-
+  before_action :authenticate_user! , only: [:search]
   def show
     @anda = Anda.find(params[:id])
   end
