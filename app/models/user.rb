@@ -19,4 +19,14 @@ class User < ApplicationRecord
     is_inspector
   end
 
+  def self.to_csv(options = {})
+    desired_columns = %w{id email created_at country company sign_in_count last_sign_in_at}
+    CSV.generate(options) do |csv|
+      csv << desired_columns
+      all.each do |user|
+        csv << user.attributes.values_at(*desired_columns)
+      end
+    end
+  end
+
 end

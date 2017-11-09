@@ -1,6 +1,11 @@
 <div class="col-md-12">
 
   <h2 class="text-center"> User search finished medicine list </h2>
+  <p>
+  Download:
+  <%= link_to "CSV",medsearches_path(format: "csv") %> |
+  <%= link_to "Excel", medsearches_path(format: "xls") %>
+</p>
 
   <table class="table">
       <thead>

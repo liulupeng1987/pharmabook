@@ -1,6 +1,11 @@
 <div class="col-md-12">
 
   <h2 class="text-center"> User search andas list </h2>
+  <p>
+  Download:
+  <%= link_to "CSV",andasearches_path(format: "csv") %> |
+  <%= link_to "Excel", andasearches_path(format: "xls") %>
+</p>
 
   <table class="table">
       <thead>

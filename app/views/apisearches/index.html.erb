@@ -2,6 +2,12 @@
 
   <h2 class="text-center"> User search apis list </h2>
 
+  <p>
+  Download:
+  <%= link_to "CSV",apisearches_path(format: "csv") %> |
+  <%= link_to "Excel", apisearches_path(format: "xls") %>
+</p>
+
   <table class="table">
       <thead>
         <tr>
