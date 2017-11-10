@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">Query medicine</Data></Cell>
+        <Cell><Data ss:Type="String">user ID</Data></Cell>
+        <Cell><Data ss:Type="String">created_at</Data></Cell>
+        <Cell><Data ss:Type="String">Email</Data></Cell>
+        <Cell><Data ss:Type="String">Country</Data></Cell>
+        <Cell><Data ss:Type="String">Company</Data></Cell>
+      </Row>
+    <% @medsearches.each do |medsearch| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= medsearch.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= medsearch.query %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= medsearch.user_id %></Data></Cell>
+        <Cell><Data ss:Type="Datetime"><%= medsearch.created_at %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= medsearch.user.email %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= medsearch.user.country %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= medsearch.user.country %></Data></Cell>
+
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

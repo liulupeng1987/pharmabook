@@ -9,16 +9,20 @@
       <Row>
         <Cell><Data ss:Type="String">ID</Data></Cell>
         <Cell><Data ss:Type="String">User's email</Data></Cell>
-        <Cell><Data ss:Type="String">Company</Data></Cell>
+        <Cell><Data ss:Type="String">Create at</Data></Cell>
         <Cell><Data ss:Type="String">Country</Data></Cell>
+        <Cell><Data ss:Type="String">Company</Data></Cell>
+        <Cell><Data ss:Type="String">sign_in_count</Data></Cell>
         <Cell><Data ss:Type="String">last_sign_in_at</Data></Cell>
       </Row>
     <% @users.each do |user| %>
       <Row>
         <Cell><Data ss:Type="Number"><%= user.id %></Data></Cell>
         <Cell><Data ss:Type="String"><%= user.email %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= user.company %></Data></Cell>
+        <Cell><Data ss:Type="DateTime"><%= user.created_at %></Data></Cell>
         <Cell><Data ss:Type="String"><%= user.country %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= user.company %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= user.sign_in_count %></Data></Cell>
         <Cell><Data ss:Type="DateTime"><%= user.last_sign_in_at %></Data></Cell>
       </Row>
     <% end %>

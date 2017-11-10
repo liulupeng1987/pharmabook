@@ -8,20 +8,24 @@
     <Table>
       <Row>
         <Cell><Data ss:Type="String">ID</Data></Cell>
-        <Cell><Data ss:Type="String">User's email</Data></Cell>
-        <Cell><Data ss:Type="String">Company</Data></Cell>
-        <Cell><Data ss:Type="String">Country</Data></Cell>
         <Cell><Data ss:Type="String">Query medicine</Data></Cell>
+        <Cell><Data ss:Type="String">User ID</Data></Cell>
         <Cell><Data ss:Type="String">Search Time</Data></Cell>
+        <Cell><Data ss:Type="String">User's email</Data></Cell>
+        <Cell><Data ss:Type="String">Country</Data></Cell>
+        <Cell><Data ss:Type="String">Company</Data></Cell>
+
       </Row>
     <% @apisearches.each do |apisearch| %>
       <Row>
         <Cell><Data ss:Type="Number"><%= apisearch.id %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= apisearch.user.email %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= apisearch.user.company %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= apisearch.user.country %></Data></Cell>
         <Cell><Data ss:Type="String"><%= apisearch.query %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= apisearch.created_at %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= apisearch.user_id %></Data></Cell>
+        <Cell><Data ss:Type="Datetime"><%= apisearch.created_at %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= apisearch.user.email %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= apisearch.user.country %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= apisearch.user.company %></Data></Cell>
+
       </Row>
     <% end %>
     </Table>
