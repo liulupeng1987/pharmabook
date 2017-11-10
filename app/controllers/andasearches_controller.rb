@@ -4,7 +4,7 @@ class AndasearchesController < ApplicationController
 
 
   def index
-    @andasearches = Andasearch.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
+    @andasearches = Andasearch.all.order("created_at DESC")
     respond_to do |format|
       format.html
       format.csv { send_data @andasearches.to_csv }
