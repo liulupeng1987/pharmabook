@@ -14,6 +14,7 @@
           <td>User's email</td>
           <td>Company</td>
           <td>Country</td>
+          <td>Mobile</td>
           <td>Query medicine</td>
           <td>Search Time</td>
         </tr>
@@ -25,6 +26,7 @@
           <td><%= andasearch.user.email %></td>
           <td><%= andasearch.user.company %></td>
           <td><%= andasearch.user.country %></td>
+          <td><%= andasearch.user.try(:mobile) %></td>
           <td><%= andasearch.query %></td>
           <td><%= andasearch.created_at%></td>
         </tr>

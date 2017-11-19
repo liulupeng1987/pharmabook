@@ -15,6 +15,7 @@
           <td>User's email</td>
           <td>Company</td>
           <td>Country</td>
+          <td>Mobile</td>
           <td>Query medicine</td>
           <td>Search Time</td>
         </tr>
@@ -26,6 +27,7 @@
           <td><%= apisearch.user.email %></td>
           <td><%= apisearch.user.company %></td>
           <td><%= apisearch.user.country %></td>
+          <td><%= apisearch.user.try(:mobile) %></td>
           <td><%= apisearch.query %></td>
           <td><%= apisearch.created_at%></td>
         </tr>

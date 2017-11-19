@@ -8,6 +8,7 @@
       <th> User email</th>
       <th> Country</th>
       <th> Company</th>
+      <th> Mobile</th>
     </tr>
   </thead>
   <tbody>
@@ -24,6 +25,9 @@
       </td>
       <td>
         <%= user.company %>
+      </td>
+      <td>
+        <%= user.try(:mobile) %>
       </td>
     </tr>
     <% end %>

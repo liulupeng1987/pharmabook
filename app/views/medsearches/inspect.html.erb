@@ -9,6 +9,7 @@
           <td>User's email</td>
           <td>Company</td>
           <td>Country</td>
+          <td>Mobile</td>
           <td>Query medicine</td>
           <td>Search Time</td>
         </tr>
@@ -21,6 +22,7 @@
           <td><%= medsearch.user.email %></td>
           <td><%= medsearch.user.company %></td>
           <td><%= medsearch.user.country %></td>
+          <td><%= medsearch.user.try(:mobile) %></td>
           <td><%= medsearch.query %></td>
           <td><%= medsearch.created_at%></td>
         </tr>

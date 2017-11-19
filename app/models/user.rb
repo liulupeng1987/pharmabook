@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   validates :country, presence: true
   validates :company, presence: true
+  validates_uniqueness_of :mobile
+  validates :mobile, phone: { possible: false, allow_blank: true, types: [:mobile] }
 
   has_many :orders, dependent: :destroy
   has_many :apisearches, dependent: :destroy
@@ -29,6 +31,6 @@ class User < ApplicationRecord
     end
   end
 
-  
+
 
 end
