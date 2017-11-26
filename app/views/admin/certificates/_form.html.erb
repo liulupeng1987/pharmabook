@@ -1,0 +1,11 @@
+<%= simple_form_for [:admin, @certificate] do |f| %>
+
+<%= f.input :manufacturer %>
+<%= f.input :fda %>
+<%= f.input :eu %>
+<%= f.input :who %>
+<%= f.input :pics %>
+<%= f.input :medicine_manufacturer_id %>
+
+  <%= f.submit "Submit" %>
+<% end %>

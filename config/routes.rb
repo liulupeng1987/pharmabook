@@ -73,6 +73,16 @@ Rails.application.routes.draw do
         post :import
       end
     end
+
+    resources :certificates do
+      collection do
+        get :search
+      end
+      collection do
+        post :import
+      end
+    end
+
     resources :medicines do
       collection do
         get :search
@@ -127,6 +137,12 @@ Rails.application.routes.draw do
   end
 
   resources :andas do
+    collection do
+      get :search
+    end
+  end
+
+  resources :certificates do
     collection do
       get :search
     end

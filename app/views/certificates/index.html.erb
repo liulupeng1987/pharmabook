@@ -1,0 +1,46 @@
+
+<%= render "searchbox" %>
+<div class="container top-margin">
+
+  <div class="row">
+
+
+    <table class="table table-boldered">
+      <thead>
+        <tr>
+          <td>Manufacturer Name</td>
+          <td>Fda</td>
+          <td>Eu GMP</td>
+          <td>Who</td>
+          <td>Other Pic/s</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @certificates.each do |certificate| %>
+        <tr>
+          <td>
+            <%= link_to(certificate.manufacturer, medicine_manufacturer_path(certificate.medicine_manufacturer)) %>
+          </td>
+          <td>
+            <%= certificate.fda %>
+          </td>
+          <td>
+            <%= certificate.eu %>
+          </td>
+          <td>
+            <%= certificate.who %>
+          </td>
+          <td>
+            <%= certificate.pics %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="text-center">
+      <%= will_paginate @certificates %>
+    </div>
+
+  </div>
+</div>

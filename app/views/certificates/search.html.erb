@@ -1,0 +1,59 @@
+<%= render "searchbox" %>
+
+<div class="container top-margin">
+  <div class="row">
+    <div class="alert alert-dismissable alert-success">
+      <button class="close" data-dismiss="alert">x</button>
+      <p> If you can't get satisfied search results, please contact <a href="mailto:lupengliu@gmail.com?Subject=Hello%20pharmabook" target="_top">lupengliu@gmail.com</a> for help.</p>
+    </div>
+
+    <table class="table table-boldered">
+      <thead>
+        <tr>
+          <td>Manufacturer</td>
+          <td>Fda</td>
+          <td>Eu GMP</td>
+          <td>Who</td>
+          <td>Pic/s</td>
+          <td>Manufacturer website</td>
+          <td>Email</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @certificates.each do |certificate| %>
+        <tr>
+          <td>
+            <%= link_to(certificate.manufacturer, medicine_manufacturer_path(certificate.medicine_manufacturer)) %>
+          </td>
+          <td>
+            <%= certificate.fda %>
+          </td>
+          <td>
+            <%= certificate.eu %>
+          </td>
+          <td>
+            <%= certificate.who %>
+          </td>
+          <td>
+            <%= certificate.pics %>
+          </td>
+          <td><%= certificate.medicine_manufacturer.website%></td>
+          <td><%= certificate.medicine_manufacturer.email%></td>
+          <% if current_user.admin? %>
+            <td>
+              <%= link_to("Edit", edit_admin_certificate_path(certificate)) %> |
+              <%= link_to("Destroy", admin_certificate_path(certificate), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+            </td>
+          <% end %>
+
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="text-center">
+      <%= will_paginate @certificates %>
+    </div>
+
+  </div>
+</div>

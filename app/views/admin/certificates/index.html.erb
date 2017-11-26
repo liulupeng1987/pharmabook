@@ -1,0 +1,64 @@
+<div class="pull-right">
+  <%= link_to("Add a Certificate", new_admin_certificate_path, :class => "btn btn-default") %>
+</div>
+
+<%= render "searchbox" %>
+<div class="container top-margin">
+
+  <div class="row">
+
+
+    <table class="table table-boldered">
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>Manufacturer Name</td>
+          <td>Fda</td>
+          <td>Eu GMP</td>
+          <td>Who</td>
+          <td>Other Pic/s</td>
+          <td>Actions</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @certificates.each do |certificate| %>
+        <tr>
+          <td><%= certificate.id %></td>
+          <td>
+            <%= link_to(certificate.manufacturer, medicine_manufacturer_path(certificate.medicine_manufacturer)) %>
+          </td>
+          <td>
+            <%= certificate.fda %>
+          </td>
+          <td>
+            <%= certificate.eu %>
+          </td>
+          <td>
+            <%= certificate.who %>
+          </td>
+          <td>
+            <%= certificate.pics %>
+          </td>
+          <td>
+            <%= link_to("Edit", edit_admin_certificate_path(certificate)) %> |
+            <%= link_to("Destroy", admin_certificate_path(certificate), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="text-center">
+      <%= will_paginate @certificates %>
+    </div>
+
+
+        <h2>Import certificates</h2>
+
+        <%= form_tag import_admin_certificates_path, multipart: true do %>
+          <%= file_field_tag :file %>
+          <%= submit_tag "Import" %>
+        <% end %>
+
+  </div>
+</div>

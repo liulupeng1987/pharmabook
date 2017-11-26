@@ -1,17 +1,17 @@
-class MedicineManufacturer < ApplicationRecord
-  has_many :medicines, dependent: :destroy
-  has_many :apis, dependent: :destroy
-  has_many :andas, dependent: :destroy
-  has_many :certificates, dependent: :destroy
-  searchkick word_start: [:name, :number, :manufacturer_name]
-  validates :name, :website, presence: true
+class Certificate < ApplicationRecord
+  belongs_to :medicine_manufacturer
 
-    def search_data
-      {
-        name: name,
-        contact_info: contact_info
-      }
-    end
+  searchkick word_start: [:manufacturer, :fda, :eu, :who, :pics]
+
+  def search_data
+    {
+      manufacturer: manufacturer,
+      fad: fda,
+      eu: eu,
+      who: who,
+      pics: pics
+    }
+  end
 
 
     def self.import(file)
@@ -19,9 +19,9 @@ class MedicineManufacturer < ApplicationRecord
       header = spreadsheet.row(1)
       (2..spreadsheet.last_row).each do |i|
         row = Hash[[header, spreadsheet.row(i)].transpose]
-        medicine_manufacturer = find_by_id(row["id"]) || new
-        medicine_manufacturer.attributes = row.to_hash
-        medicine_manufacturer.save!
+        certificate = find_by_id(row["id"]) || new
+        certificate.attributes = row.to_hash
+        certificate.save!
       end
     end
 

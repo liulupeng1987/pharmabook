@@ -40,7 +40,7 @@ class Admin::AndasController < ApplicationController
   end
 
   def destroy
-    @and = Anda.find(params[:id])
+    @anda = Anda.find(params[:id])
     @anda.destroy
     redirect_to admin_andas_path
   end
@@ -53,7 +53,7 @@ class Admin::AndasController < ApplicationController
       @andas = Anda.all.paginate(:page => params[:page], :per_page => 20)
     end
   end
-  
+
   def import
     Anda.import(params[:file])
     redirect_to admin_andas_path, notice: "ANDAs imported."
