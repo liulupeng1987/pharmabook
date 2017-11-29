@@ -1,18 +1,25 @@
-
 <%= render "searchbox" %>
+
 <div class="container top-margin">
 
   <div class="row">
 
+    <p>
+      <%= link_to "all", certificates_path, :class => "btn btn-success"%>
+      <%= link_to "US-FDA", certificates_path(:filter => "fda"), :class => "btn btn-success" %>
+      <%= link_to "EU-GMP", certificates_path(:filter => "eu"), :class => "btn btn-success" %>
+      <%= link_to "WHO-GMP", certificates_path(:filter => "who"), :class => "btn btn-success" %>
+      <%= link_to "Other Pic/s", certificates_path(:filter => "pics"), :class => "btn btn-success" %>
+    </p>
 
     <table class="table table-boldered">
       <thead>
-        <tr>
-          <td>Manufacturer Name</td>
-          <td>Fda</td>
-          <td>Eu GMP</td>
-          <td>Who</td>
-          <td>Other Pic/s</td>
+        <tr class="active">
+          <td><strong>Manufacturer</strong></td>
+          <td><strong>Fda</strong></td>
+          <td><strong>Eu GMP</strong></td>
+          <td><strong>Who</strong></td>
+          <td><strong>Other Pic/s</strong></td>
         </tr>
       </thead>
 
@@ -41,6 +48,8 @@
     <div class="text-center">
       <%= will_paginate @certificates %>
     </div>
+
+
 
   </div>
 </div>
