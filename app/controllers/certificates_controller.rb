@@ -18,6 +18,10 @@ class CertificatesController < ApplicationController
 
     def search
       if params[:search].present?
+        certsearch = Certsearch.new
+        certsearch.query = params[:search]
+        certsearch.user = current_user
+        certsearch.save
 
         @certificates = Certificate.search(params[:search], fields:["manufacturer", "fda", "eu", "who", "pics"], order: {id: :asc}, page: params[:page], per_page: 20)
 

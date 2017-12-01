@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">Query medicine</Data></Cell>
+        <Cell><Data ss:Type="String">User id</Data></Cell>
+        <Cell><Data ss:Type="String">Search time</Data></Cell>
+        <Cell><Data ss:Type="String">Email</Data></Cell>
+        <Cell><Data ss:Type="String">Country</Data></Cell>
+        <Cell><Data ss:Type="String">Company</Data></Cell>
+      </Row>
+    <% @certsearches.each do |certsearch| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= certsearch.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= certsearch.query %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= certsearch.user_id %></Data></Cell>
+        <Cell><Data ss:Type="Datetime"><%= certsearch.created_at %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= certsearch.user.email %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= certsearch.user.country %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= certsearch.user.company %></Data></Cell>
+
+
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

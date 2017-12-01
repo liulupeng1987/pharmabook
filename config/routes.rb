@@ -46,6 +46,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :certsearches do
+    collection do
+      get :inspect
+    end
+  end
+
   namespace :admin do
     resources :products
     resources :apis do

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171126135925) do
+ActiveRecord::Schema.define(version: 20171201105309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,14 @@ ActiveRecord::Schema.define(version: 20171126135925) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["medicine_manufacturer_id"], name: "index_certificates_on_medicine_manufacturer_id", using: :btree
+  end
+
+  create_table "certsearches", force: :cascade do |t|
+    t.string   "query"
+    t.string   "user_email"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "images", force: :cascade do |t|

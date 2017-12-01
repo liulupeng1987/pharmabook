@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :apisearches, dependent: :destroy
   has_many :medsearches, dependent: :destroy
   has_many :andasearches, dependent: :destroy
+  has_many :certsearches, dependent: :destroy
   def admin?
     is_admin
   end

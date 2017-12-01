@@ -1,0 +1,37 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> User search certificates list </h2>
+  <p>
+  Download:
+  <%= link_to "CSV",certsearches_path(format: "csv") %> |
+  <%= link_to "Excel", certsearches_path(format: "xls") %>
+</p>
+
+  <table class="table">
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>User's email</td>
+          <td>Company</td>
+          <td>Country</td>
+          <td>Mobile</td>
+          <td>Query medicine</td>
+          <td>Search Time</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @certsearches.each do |certsearch| %>
+        <tr>
+          <td><%= certsearch.id %></td>
+          <td><%= certsearch.user.email %></td>
+          <td><%= certsearch.user.company %></td>
+          <td><%= certsearch.user.country %></td>
+          <td><%= certsearch.user.try(:mobile) %></td>
+          <td><%= certsearch.query %></td>
+          <td><%= certsearch.created_at%></td>
+        </tr>
+        <% end %>
+      </tbody>
+  </table>
+
+</div>
