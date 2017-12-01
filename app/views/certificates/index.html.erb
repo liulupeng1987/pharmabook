@@ -20,6 +20,7 @@
           <td align="center"><strong>Eu GMP</strong></td>
           <td align="center"><strong>WHO-PQ</strong></td>
           <td align="center"><strong>Other Pic/s</strong></td>
+
         </tr>
       </thead>
 
@@ -29,18 +30,19 @@
           <td>
             <%= link_to(certificate.manufacturer, medicine_manufacturer_path(certificate.medicine_manufacturer)) %>
           </td>
-          <td>
+          <td align="center">
             <%= certificate.fda %>
           </td>
-          <td>
+          <td align="center">
             <%= certificate.eu %>
           </td>
-          <td>
+          <td align="center">
             <%= certificate.who %>
           </td>
-          <td>
+          <td align="center">
             <%= certificate.pics %>
           </td>
+          
         </tr>
         <% end %>
       </tbody>
