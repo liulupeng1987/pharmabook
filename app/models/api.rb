@@ -17,7 +17,7 @@ class Api < ApplicationRecord
       (2..spreadsheet.last_row).each do |i|
         row = Hash[[header, spreadsheet.row(i)].transpose]
         api = find_by_id(row["id"]) || new
-        api = row.to_hash
+        api.attributes = row.to_hash
         api.save!
       end
     end
