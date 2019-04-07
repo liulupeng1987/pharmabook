@@ -4,7 +4,7 @@ class ApisearchesController < ApplicationController
 
 
   def index
-    @apisearches = Apisearch.all.order("created_at DESC")
+    @apisearches = Apisearch.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 100)
     respond_to do |format|
       format.html
       format.csv { send_data @apisearches.to_csv }

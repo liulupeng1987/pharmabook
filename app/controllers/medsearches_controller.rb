@@ -3,7 +3,7 @@ class MedsearchesController < ApplicationController
   before_action :inspector_required, :only => [:inspect]
 
   def index
-    @medsearches = Medsearch.all.order("created_at DESC")
+    @medsearches = Medsearch.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 100)
     respond_to do |format|
       format.html
       format.csv { send_data @medsearches.to_csv }

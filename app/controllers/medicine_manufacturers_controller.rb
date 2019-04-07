@@ -1,5 +1,5 @@
 class MedicineManufacturersController < ApplicationController
-  before_action :authenticate_user! , only: [:new]
+  before_action :authenticate_user! , only: [:search]
   def show
     @medicine_manufacturer = MedicineManufacturer.find(params[:id])
     @apis = @medicine_manufacturer.apis.paginate(:page => params[:page], :per_page => 20)
