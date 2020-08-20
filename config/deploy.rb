@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock "3.8.1"
+lock "3.14.1"
 
 set :application, "pharmabook"
 set :repo_url, "https://github.com/liulupeng1987/pharmabook.git"
